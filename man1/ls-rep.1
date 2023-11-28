@@ -1,0 +1,61 @@
+.\" Note: make sure we know which command we're going to have in the install script.
+.\" Note: add support for regular ls args (-l, -a, etc.)
+.\"
+.\" aarikpokras/ls-rep Man Page
+.\"
+.\" Licensed under the
+.\" MIT License
+.\" 
+.\" Copyright (c) 2023 Aarik Pokras
+.\" 
+.\" Permission is hereby granted, free of charge, to any person obtaining a copy
+.\" of this software and associated documentation files (the "Software"), to deal
+.\" in the Software without restriction, including without limitation the rights
+.\" to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+.\" copies of the Software, and to permit persons to whom the Software is
+.\" furnished to do so, subject to the following conditions:
+.\" 
+.\" The above copyright notice and this permission notice shall be included in all
+.\" copies or substantial portions of the Software.
+.\" 
+.\" THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+.\" IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+.\" FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+.\" AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+.\" LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+.\" OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+.\" SOFTWARE.
+.\" 
+.\"
+
+.TH LS\-REP 1 "2023-11-28" "1.0" "ls-rep Man Page"
+.SH NAME
+ls-rep \- A replacement for \fIls\fR(1) for macOS that supports color.
+.SH SYNOPSIS
+\fBls-rep\fR [directory | option]
+.SH OPTIONS
+.TP
+\fIdirectory\fR
+.br
+.TP
+\fB\-\-color\fR[=yes | =always]
+Set color to \fIon\fR for \fBls-rep\fR. \fIAlways\fR support coming soon.
+.br
+.TP
+\fB\-\-color\fR[=no | =never]
+Set color to \fIoff\fR for \fBls-rep\fR.
+.br
+.SH DESCRIPTION
+.ad
+\fBls-rep\fR does not accept most of the arguments that \fIls\fR(1) does. Support for that is coming soon.
+.\".ad
+If a file is passed as an argument, \fBls-rep\fR displays that file.
+.\".ad
+If a directory is passed as an argument, \fBls-rep\fR displays the contents of that directory.
+.\".ad
+If no arguments are passed, \fBls-rep\fR displays the contents of the current directory in color.
+.br
+.SH BUGS
+If you find a bug, please contact \fIme@aarikpokras.com\fR or submit an issue on the GitHub page.
+.SH SEE ALSO
+\fIls\fR(1)
