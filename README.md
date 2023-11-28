@@ -2,8 +2,8 @@
 An ls replacement for macOS with color support.
 
 ## Options
-### `-a`
-Display all files in the current directory.
+### `-a [directory]`
+Display all files in the current directory or `directory`
 ### `--color [=yes | =always]`
 Turn color on.
 ### `--color [=no | =never]`
