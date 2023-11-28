@@ -33,6 +33,15 @@ else
 # indentation removed for readability.
 # No, your eyes aren't broken, you read that right
   case $1 in
+    "-a")
+
+for i in .* *; do
+  if [ -d "$i" ]; then printf "\e[1;34m$i\e[0m\n"
+  elif [ -f "$i" ]; then printf "\e[0m$i\n"
+  fi
+done
+
+    ;;
     "--color=no")
 
 for i in *; do
