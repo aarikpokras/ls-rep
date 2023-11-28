@@ -62,7 +62,7 @@ done
 for i in *; do
   echo $i
 done
-sed -i '' '1s/.*/color=never/' $HOME/.lsrc
+sed -i'' '1s/.*/color=never/' $HOME/.lsrc
 
     ;;
     "--color=yes" | "--color")
@@ -79,7 +79,7 @@ done
 for i in *; do
   echo $i
 done
-sed -i '' '1s/.*/color=always/' $HOME/.lsrc
+sed -i'' '1s/.*/color=always/' $HOME/.lsrc
 
     ;;
     *)
