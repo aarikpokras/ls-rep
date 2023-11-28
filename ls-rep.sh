@@ -30,6 +30,8 @@ if [ -z "$1" ]; then
     fi
   done
 else
+# indentation removed for readability.
+# No, your eyes aren't broken, you read that right
   case $1 in
     "--color=no")
 
