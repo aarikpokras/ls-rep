@@ -35,11 +35,19 @@ else
   case $1 in
     "-a")
 
-for i in .* *; do
-  if [ -d "$i" ]; then printf "\e[1;34m$i\e[0m\n"
-  elif [ -f "$i" ]; then printf "\e[0m$i\n"
-  fi
-done
+if [ -z "$2" ]; then
+  for i in .* *; do
+    if [ -d "$i" ]; then printf "\e[1;34m$i\e[0m\n"
+    elif [ -f "$i" ]; then printf "\e[0m$i\n"
+    fi
+  done
+else
+  for i in $2/.* $2/*; do
+    if [ -d "$i" ]; then printf "\e[1;34m$i\e[0m\n" | sed 's/\///'
+    elif [ -f "$i" ]; then printf "\e[0m$i\n" | sed 's/\///'
+    fi
+  done
+fi
 
     ;;
     "--color=no")
@@ -79,9 +87,9 @@ sed -i '' '1s/.*/color=always/' $HOME/.lsrc
 if [ -d "$1" ]; then
   for i in $1/*; do
     if [ -d "$i" ]; then
-      printf "\e[1;34m$i\e[0m\n"
+      printf "\e[1;34m$i\e[0m\n" | sed 's/\///'
     elif [ -f "$i" ]; then
-      printf "\e[0m$i\n"
+      printf "\e[0m$i\n" | sed 's/\///'
     fi
   done
 elif [ -f "$1" ]; then
