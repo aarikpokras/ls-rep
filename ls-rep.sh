@@ -26,6 +26,7 @@ fi
 if [ -z "$1" ]; then
   for i in *; do
     if [ -d "$i" ]; then printf "\e[1;34m$i\e[0m\n"
+    elif [ -L "$i" ]; then printf "\e[0;32m$i\e[0m\n"
     elif [ -f "$i" ]; then printf "\e[0m$i\n"
     fi
   done
@@ -38,12 +39,14 @@ else
 if [ -z "$2" ]; then
   for i in .* *; do
     if [ -d "$i" ]; then printf "\e[1;34m$i\e[0m\n"
+    elif [ -L "$i" ]; then printf "\e[0;32m$i\e[0m\n"
     elif [ -f "$i" ]; then printf "\e[0m$i\n"
     fi
   done
 else
   for i in $2/.* $2/*; do
     if [ -d "$i" ]; then printf "\e[1;34m$i\e[0m\n" | sed 's/\///'
+    elif [ -L "$i" ]; then printf "\e[0;32m$i\e[0m\n" | sed 's/\///'
     elif [ -f "$i" ]; then printf "\e[0m$i\n" | sed 's/\///'
     fi
   done
@@ -69,6 +72,7 @@ sed -i'' '1s/.*/color=never/' $HOME/.lsrc
 
 for i in *; do
   if [ -d "$i" ]; then printf "\e[1;34m$i\e[0m\n"
+  elif [ -L "$i" ]; then printf "\e[0;32m$i\e[0m\n"
   elif [ -f "$i" ]; then printf "\e[0m$i\n"
   fi
 done
@@ -88,8 +92,10 @@ if [ -d "$1" ]; then
   for i in $1/*; do
     if [ -d "$i" ]; then
       printf "\e[1;34m$i\e[0m\n" | sed 's/\///'
+    elif [ -L "$i" ]; then
+      printf "\e[0;32m$i\e[0m\n" | sed 's/\///'
     elif [ -f "$i" ]; then
-      printf "\e[0m$i\n" | sed 's/\///'
+      printf "\e[0m$i\n"
     fi
   done
 elif [ -f "$1" ]; then
