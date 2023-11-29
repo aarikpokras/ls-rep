@@ -11,4 +11,4 @@ Turn color off.
 #### `directory`
 Display contents of `directory`.
 #### `file`
-Display name of `file`
+Display name of `file`.
